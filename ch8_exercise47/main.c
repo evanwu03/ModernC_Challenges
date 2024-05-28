@@ -12,7 +12,6 @@ int main(int argc, char *argv[])
     char buffer[BUFF_SIZE] = {0};
     switch (argc)
     {
-
     case 1:
     {
         while (true)
@@ -44,9 +43,9 @@ int main(int argc, char *argv[])
                     {
                         printf("%d: ", line_num);
                         fputs(buffer, stdout);
-                        fputs("\n", stdout);
                         line_num++;
                     }
+                    fputs("\n", stdout);
                     fclose(instream);
                     ret = EXIT_SUCCESS;
                 }
