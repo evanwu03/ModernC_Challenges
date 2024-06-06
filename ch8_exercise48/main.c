@@ -75,7 +75,7 @@ unsigned long Strtoul(char const s[static 1], unsigned base) {
         if (!base) base  = (unsigned[]){ 10, 8, 16 }[adj];
         i += adj; 
     }
-    /* now, star tthe real conversion */
+    /* now, start the real conversion */
     unsigned long ret  = Strtoul_inner(s, i, base);
     return (switchsign) ? -ret : ret;
 
