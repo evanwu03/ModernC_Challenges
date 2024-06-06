@@ -47,6 +47,11 @@ unsigned long Strtoul_inner(char const s[static 1], size_t i , unsigned base) {
 
 }
 
+// Function finds the position if the base is a prefix to the first string 
+size_t find_prefix(char const s[static 1], size_t i, char const base[static 1]) { 
+
+    return strncmp(s, base, strlen(base)) == 0 ? strlen(base) : 0; 
+}
 
 // Exercise 51 says implement a find_prefix function for Strtoul 
 unsigned long Strtoul(char const s[static 1], unsigned base) { 
@@ -80,7 +85,7 @@ unsigned long Strtoul(char const s[static 1], unsigned base) {
 
 int main(void) { 
 
-    const char str[]  = "clouds";
-    printf("%s in decimal is %u", Strtoul(str, 10));
+    const char str[]  = "0x44";
+    printf("%s in decimal is %u", str, Strtoul(str, 8));
 }
 
